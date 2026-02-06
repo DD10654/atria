@@ -100,12 +100,12 @@ export default function PostPage() {
     const formTitle = isHost ? 'Post an Activity' : (isLowerClassman ? 'Request a Tutor' : 'Offer Tutoring')
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-brand-bg-alt">
             <Navbar />
 
             <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="bg-white rounded-xl shadow-lg p-8">
-                    <h1 className="text-2xl font-bold mb-6 text-gray-900">{formTitle}</h1>
+                <div className="bg-brand-bg rounded-xl shadow-lg p-8">
+                    <h1 className="text-2xl font-bold mb-6 text-brand-text">{formTitle}</h1>
 
                     <form onSubmit={handleCreatePost} className="space-y-6">
                         <div>
@@ -116,7 +116,7 @@ export default function PostPage() {
                                 required
                                 maxLength={500}
                                 rows={4}
-                                className="w-full rounded-md border border-gray-300 p-3 shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                                className="w-full rounded-md border border-gray-300 p-3 shadow-sm focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-brand-text"
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 placeholder="Describe what you need help with, what you can teach, or details about the activity..."
@@ -128,12 +128,12 @@ export default function PostPage() {
 
                         {isStudent && (
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Subjects</label>
+                                <label className="block text-sm font-medium text-brand-text mb-2">Subjects</label>
                                 <div className="flex gap-2 mb-2">
                                     <input
                                         type="text"
                                         maxLength={20}
-                                        className="flex-1 rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                                        className="flex-1 rounded-md border border-gray-300 p-2 shadow-sm focus:border-brand-accent focus:ring-1 focus:ring-brand-accent text-brand-text"
                                         value={subjectInput}
                                         onChange={(e) => setSubjectInput(e.target.value)}
                                         placeholder="e.g. Math, History"
@@ -142,14 +142,14 @@ export default function PostPage() {
                                     <button
                                         type="button"
                                         onClick={addSubject}
-                                        className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-md hover:bg-indigo-200"
+                                        className="px-4 py-2 bg-brand-accent/30 text-brand-text rounded-md hover:bg-brand-accent/50"
                                     >
                                         Add
                                     </button>
                                 </div>
                                 <div className="flex flex-wrap gap-2">
                                     {subjects.map((sub, idx) => (
-                                        <span key={idx} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                                        <span key={idx} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-bg-muted text-gray-800">
                                             {sub}
                                             <button
                                                 type="button"
@@ -166,11 +166,11 @@ export default function PostPage() {
 
                         {isHost && (
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Date</label>
+                                <label className="block text-sm font-medium text-brand-text mb-2">Date</label>
                                 <input
                                     type="date"
                                     required
-                                    className="w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                                    className="w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-brand-accent focus:ring-1 focus:ring-brand-accent"
                                     value={date}
                                     onChange={(e) => setDate(e.target.value)}
                                 />
@@ -180,7 +180,7 @@ export default function PostPage() {
                         <div className="pt-4">
                             <button
                                 type="submit"
-                                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all"
+                                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-brand-text bg-brand-accent hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-accent transition-all"
                             >
                                 Create Post
                             </button>

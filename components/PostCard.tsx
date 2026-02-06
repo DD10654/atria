@@ -34,14 +34,14 @@ export default function PostCard({ post }: PostProps) {
     }[post.post_type]
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+        <div className="bg-brand-bg rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
             <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 bg-gray-100 rounded-full flex items-center justify-center">
+                    <div className="h-10 w-10 bg-brand-bg-muted rounded-full flex items-center justify-center">
                         <User className="h-5 w-5 text-gray-500" />
                     </div>
                     <div>
-                        <Link href={`/account/${post.user?.username}`} className="font-semibold text-gray-900 hover:text-indigo-600">
+                        <Link href={`/account/${post.user?.username}`} className="font-semibold text-brand-text hover:text-brand-accent">
                             {post.user?.username || 'Unknown User'}
                         </Link>
                         <div className="text-xs text-gray-500 flex items-center gap-1">
@@ -58,12 +58,12 @@ export default function PostCard({ post }: PostProps) {
                 </span>
             </div>
 
-            <p className="text-gray-700 mb-4 whitespace-pre-wrap">{post.description}</p>
+            <p className="text-brand-text mb-4 whitespace-pre-wrap">{post.description}</p>
 
             {!isExtracurricular && post.subjects && (
                 <div className="flex flex-wrap gap-2 mb-3">
                     {post.subjects.map((subject, idx) => (
-                        <span key={idx} className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-50 text-gray-600 border border-gray-200">
+                        <span key={idx} className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-brand-bg-alt text-gray-600 border border-gray-200">
                             <BookOpen className="w-3 h-3 mr-1" />
                             {subject}
                         </span>
@@ -73,7 +73,7 @@ export default function PostCard({ post }: PostProps) {
 
             {isExtracurricular && post.date && (
                 <div className="flex items-center text-sm text-gray-600 bg-gray-50 p-2 rounded-md inline-flex">
-                    <Calendar className="w-4 h-4 mr-2 text-indigo-500" />
+                    <Calendar className="w-4 h-4 mr-2 text-brand-text" />
                     Event Date: {new Date(post.date).toLocaleDateString()}
                 </div>
             )}

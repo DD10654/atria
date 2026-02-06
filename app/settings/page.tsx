@@ -65,15 +65,15 @@ export default function SettingsPage() {
         router.push('/')
     }
 
-    if (loading) return <div className="p-8 text-center pt-24 bg-gray-50 min-h-screen">Loading...</div>
+    if (loading) return <div className="p-8 text-center pt-24 brand-bg-alt min-h-screen">Loading...</div>
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen brand-bg-alt">
             <Navbar />
 
             <main className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
-                    <h1 className="text-2xl font-bold mb-6 text-gray-900">Account Settings</h1>
+                <div className="brand-bg rounded-xl shadow-sm border border-gray-100 p-8">
+                    <h1 className="text-2xl font-bold mb-6 text-brand-text">Account Settings</h1>
 
                     {message && (
                         <div className={`p-4 rounded-md mb-6 ${message.includes('Error') ? 'bg-red-50 text-red-700' : 'bg-green-50 text-green-700'}`}>
@@ -83,24 +83,24 @@ export default function SettingsPage() {
 
                     <form onSubmit={handleUpdateProfile} className="space-y-6">
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-brand-text mb-2">
                                 Username
                             </label>
                             <input
                                 type="text"
                                 required
-                                className="w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                                className="w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-brand-text"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                             />
                         </div>
 
                         <div>
-                            <div className="text-sm font-medium text-gray-700 mb-2">Password</div>
+                            <div className="text-sm font-medium text-brand-text mb-2">Password</div>
                             <button
                                 type="button"
                                 onClick={() => alert("Password reset functionality would typically involve sending a reset email via Supabase Auth.")}
-                                className="text-indigo-600 hover:text-indigo-500 text-sm font-medium"
+                                className="text-brand-text hover:text-brand-text/80 text-sm font-medium"
                             >
                                 Reset Password via Email
                             </button>
@@ -109,7 +109,7 @@ export default function SettingsPage() {
                         <div className="pt-4 border-t border-gray-100">
                             <button
                                 type="submit"
-                                className="flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                className="flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium bg-brand-accent text-brand-text hover:bg-brand-accent/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-accent"
                             >
                                 Save Changes
                             </button>

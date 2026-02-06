@@ -95,10 +95,10 @@ export default function AccountPage() {
         }
     }
 
-    if (loading) return <div className="p-8 text-center bg-gray-50 min-h-screen pt-24">Loading...</div>
+    if (loading) return <div className="p-8 text-center bg-brand-bg-alt min-h-screen pt-24">Loading...</div>
 
     if (!profile) return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-brand-bg-alt">
             <Navbar />
             <div className="p-8 text-center pt-24 text-gray-500">User not found.</div>
         </div>
@@ -107,26 +107,26 @@ export default function AccountPage() {
     const isOwnProfile = currentUser?.id === profile.id
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-brand-bg-alt">
             <Navbar />
 
             <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {/* Profile Header */}
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8 flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                    <div className="h-24 w-24 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full flex items-center justify-center border-4 border-white shadow-md">
-                        <span className="text-3xl font-bold text-indigo-600">{profile.username[0].toUpperCase()}</span>
+                <div className="bg-brand-bg rounded-xl shadow-sm border border-gray-100 p-8 mb-8 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                    <div className="h-24 w-24 bg-brand-accent/30 rounded-full flex items-center justify-center border-4 border-white shadow-md">
+                        <span className="text-3xl font-bold text-brand-text">{profile.username[0].toUpperCase()}</span>
                     </div>
 
                     <div className="flex-1 text-center sm:text-left">
-                        <h1 className="text-3xl font-bold text-gray-900">{profile.username}</h1>
+                        <h1 className="text-3xl font-bold text-brand-text">{profile.username}</h1>
                         <div className="mt-2 flex flex-col sm:flex-row gap-3 sm:gap-6 items-center sm:items-start text-gray-600">
                             {profile.account_type === 'student' && (
-                                <span className="flex items-center gap-1.5 capitalize bg-gray-100 px-3 py-1 rounded-full text-sm">
+                                <span className="flex items-center gap-1.5 capitalize bg-brand-bg-muted px-3 py-1 rounded-full text-sm">
                                     <GraduationCap className="w-4 h-4" />
                                     {profile.year} Student
                                 </span>
                             )}
-                            <span className="flex items-center gap-1.5 bg-gray-100 px-3 py-1 rounded-full text-sm">
+                            <span className="flex items-center gap-1.5 bg-brand-bg-muted px-3 py-1 rounded-full text-sm">
                                 <Phone className="w-4 h-4" />
                                 {profile.phone_number}
                             </span>
@@ -135,12 +135,12 @@ export default function AccountPage() {
                 </div>
 
                 {/* Posts */}
-                <h2 className="text-xl font-semibold mb-6 text-gray-900">
+                <h2 className="text-xl font-semibold mb-6 text-brand-text">
                     {isOwnProfile ? 'My Posts' : `${profile.username}'s Posts`}
                 </h2>
 
                 {posts.length === 0 ? (
-                    <div className="text-center py-12 bg-white rounded-xl shadow-sm border border-gray-100 text-gray-500">
+                    <div className="text-center py-12 bg-brand-bg rounded-xl shadow-sm border border-gray-100 text-gray-500">
                         No posts yet.
                     </div>
                 ) : (
